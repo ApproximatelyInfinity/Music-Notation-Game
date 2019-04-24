@@ -37,112 +37,92 @@
 			//perhaps change the note array to change on an if statement?
 			note = ["Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B", "B#"];
 			ans = note[Math.floor(Math.random() * note.length)];
+			console.log(ans);
 			
 			//change the image when the page is loaded
 			switch(ans) {
 				case "A":
 					img = imgA[Math.floor(Math.random() * imgA.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "B":
 					img = imgB[Math.floor(Math.random() * imgB.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "C":
 					img = imgC[Math.floor(Math.random() * imgC.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "D":
 					img = imgD[Math.floor(Math.random() * imgD.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "E":
 					img = imgE[Math.floor(Math.random() * imgE.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "F":
 					img = imgF[Math.floor(Math.random() * imgF.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "G":
 					img = imgG[Math.floor(Math.random() * imgG.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "Ab":
 					img = imgAb[Math.floor(Math.random() * imgAb.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "Bb":
 					img = imgBb[Math.floor(Math.random() * imgBb.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "Cb":
 					img = imgCb[Math.floor(Math.random() * imgCb.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "Db":
 					img = imgDb[Math.floor(Math.random() * imgDb.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "Eb":
 					img = imgEb[Math.floor(Math.random() * imgEb.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "Fb":
 					img = imgFb[Math.floor(Math.random() * imgFb.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "Gb":
 					img = imgGb[Math.floor(Math.random() * imgGb.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "A#":
 					img = imgAs[Math.floor(Math.random() * imgAs.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "B#":
 					img = imgBs[Math.floor(Math.random() * imgBs.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "C#":
 					img = imgCs[Math.floor(Math.random() * imgCs.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "D#":
 					img = imgDs[Math.floor(Math.random() * imgDs.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "E#":
 					img = imgEs[Math.floor(Math.random() * imgEs.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "F#":
 					img = imgFs[Math.floor(Math.random() * imgFs.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				case "G#":
 					img = imgGs[Math.floor(Math.random() * imgGs.length)];
-					document.getElementById("test2").innerHTML = img;
 					document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 					break;
 				default:
@@ -150,60 +130,119 @@
 					break;
 			}
 			
-			//toggle accented notes
+			//toggle sharps
 			document.querySelector('#btn1').addEventListener('click',function() {
-				if(flag_sharp == false) {
-					document.getElementById("sharp").style.display = "none";
-					flag_sharp = true;
-					toggle_sharp = true;
-					if(toggle_sharp == true && toggle_flat == true) {
-						note = ["C", "D", "E", "F", "G", "A", "B"];
-						ans = note[Math.floor(Math.random() * note.length)];
-						imgChange(ans);
-					}else{
-						note = ["Cb", "C",, "Db", "D", "Eb", "E", "Fb", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
-						ans = note[Math.floor(Math.random() * note.length)];
-						imgChange(ans);
-					}
-				}else{				
-					document.getElementById("sharp").style.display = "block";
-					flag_sharp = false;
-					toggle_sharp = false;
-					note = ["Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B", "B#"];
-					ans = note[Math.floor(Math.random() * note.length)];
-					imgChange(ans);
-				}
-			});
-			
-			document.querySelector('#btn2').addEventListener('click',function() {
-				if(flag_flat == false) {
-					document.getElementById("flat").style.display = "none";
-					flag_flat = true;
-					toggle_flat = true;
-					if(toggle_sharp == true && toggle_flat == true) {
-						note = ["C", "D", "E", "F", "G", "A", "B"];
-						ans = note[Math.floor(Math.random() * note.length)];
-						imgChange(ans);
-					}else{
-						if(flag_enharmonic == true) {
-							console.log("working");
+				if(flag_enharmonic == true) {
+					console.log("Enharmonics: "+flag_enharmonic);
+					if(flag_sharp == false) {
+						console.log("Sharps: "+flag_sharp);
+						document.getElementById("sharp").style.display = "none";
+						flag_sharp = true;
+						toggle_sharp = true;
+						if(toggle_sharp == true && toggle_flat == true) {
+							note = ["C", "D", "E", "F", "G", "A", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
 						}else{
-							console.log("working2");
+							note = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
 						}
-						note = ["C", "C#", "D", "D#", "E", "E#", "F", "F#", "G", "G#", "A", "A#", "B", "B#"];
+					}else{
+						console.log("Sharps: "+flag_sharp);
+						document.getElementById("sharp").style.display = "block";
+						flag_sharp = false;
+						toggle_sharp = false;
+						note = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
 						ans = note[Math.floor(Math.random() * note.length)];
 						imgChange(ans);
 					}
-				}else{				
-					document.getElementById("flat").style.display = "block";
-					flag_flat = false;
-					toggle_flat = false;
-					note = ["Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B", "B#"];
-					ans = note[Math.floor(Math.random() * note.length)];
-					imgChange(ans);
+				}else{
+					console.log("Enharmonics: "+flag_enharmonic);
+					if(flag_sharp == false) {
+						console.log("Sharps: "+flag_sharp);
+						document.getElementById("sharp").style.display = "none";
+						flag_sharp = true;
+						toggle_sharp = true;
+						if(toggle_sharp == true && toggle_flat == true) {
+							note = ["C", "D", "E", "F", "G", "A", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}else{
+							note = ["Cb", "C", "Db", "D", "Eb", "E", "Fb", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}
+					}else{
+						console.log("Sharps: "+flag_sharp);
+						document.getElementById("sharp").style.display = "block";
+						flag_sharp = false;
+						toggle_sharp = false;
+						note = ["Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B", "B#"];
+						ans = note[Math.floor(Math.random() * note.length)];
+						imgChange(ans);
+					}
 				}
 			});
 			
+			//toggle flats
+			document.querySelector('#btn2').addEventListener('click',function() {
+				if(flag_enharmonic == true) {
+					//enharmonics are turned on
+					console.log("Enharmonics: "+flag_enharmonic);
+					if(flag_flat == false) {
+						console.log("Flats: "+flag_flat);
+						document.getElementById("flat").style.display = "none";
+						flag_flat = true;
+						toggle_flat = true;
+						if(toggle_sharp == true && toggle_flat == true) {
+							note = ["C", "D", "E", "F", "G", "A", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}else{
+							note = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}
+					}else{
+						console.log("Flats: "+flag_flat);
+						document.getElementById("flat").style.display = "block";
+						flag_flat = false;
+						toggle_flat = false;
+						note = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
+						ans = note[Math.floor(Math.random() * note.length)];
+						imgChange(ans);
+					}
+				}else{
+					//enharmonics are turned off
+					console.log("Enharmonics: "+flag_enharmonic);
+					if(flag_flat == false) {
+						console.log("Flats: "+flag_flat);
+						document.getElementById("flat").style.display = "none";
+						flag_flat = true;
+						toggle_flat = true;
+						if(toggle_sharp == true && toggle_flat == true) {
+							note = ["C", "D", "E", "F", "G", "A", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}else{
+							note = ["C", "C#", "D", "D#", "E", "E#", "F", "F#", "G", "G#", "A", "A#", "B", "B#"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}
+					}else{
+						console.log("Flats: "+flag_flat);
+						document.getElementById("flat").style.display = "block";
+						flag_flat = false;
+						toggle_flat = false;
+						note = ["Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B", "B#"];
+						ans = note[Math.floor(Math.random() * note.length)];
+						imgChange(ans);
+					}
+				}
+			});
+			
+			//disables redundant notes
 			document.querySelector('#btn3').addEventListener('click',function() {
 				if(flag_enharmonic == false) {
 					document.getElementById("Cb").style.backgroundColor = "grey";
@@ -216,6 +255,32 @@
 					document.getElementById("B#").disabled = true;
 					flag_enharmonic = true;
 					toggle_enharmonic = true;
+					
+					//changes the note when the enharmonic button is toggled
+					if(flag_flat == true) {
+						if(toggle_sharp == true && toggle_flat == true) {
+							note = ["C", "D", "E", "F", "G", "A", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}else{
+							note = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}
+					}
+					
+					if(flag_sharp == true) {
+						if(toggle_sharp == true && toggle_flat == true) {
+							note = ["C", "D", "E", "F", "G", "A", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}else{
+							note = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}
+					}
+					
 				}else{
 					document.getElementById("Cb").style.backgroundColor = "#6D00BE";
 					document.getElementById("Cb").disabled = false;
@@ -227,8 +292,32 @@
 					document.getElementById("B#").disabled = false;
 					flag_enharmonic = false;
 					toggle_enharmonic = false;
-				}
+
+					//changes the note when the enharmonic button is toggled
+					if(flag_flat == true) {
+						if(toggle_sharp == true && toggle_flat == true) {
+							note = ["C", "D", "E", "F", "G", "A", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}else{
+							note = ["C", "C#", "D", "D#", "E", "E#", "F", "F#", "G", "G#", "A", "A#", "B", "B#"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}
+					}
 					
+					if(flag_sharp == true) {
+						if(toggle_sharp == true && toggle_flat == true) {
+							note = ["C", "D", "E", "F", "G", "A", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}else{
+							note = ["Cb", "C", "Db", "D", "Eb", "E", "Fb", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
+							ans = note[Math.floor(Math.random() * note.length)];
+							imgChange(ans);
+						}
+					}
+				}	
 			});
 			
 			//passes the answer to this function to change image
@@ -237,107 +326,86 @@
 				switch(ans) {
 					case "A":
 						img = imgA[Math.floor(Math.random() * imgA.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "B":
 						img = imgB[Math.floor(Math.random() * imgB.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "C":
 						img = imgC[Math.floor(Math.random() * imgC.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "D":
 						img = imgD[Math.floor(Math.random() * imgD.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "E":
 						img = imgE[Math.floor(Math.random() * imgE.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "F":
 						img = imgF[Math.floor(Math.random() * imgF.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "G":
 						img = imgG[Math.floor(Math.random() * imgG.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "Ab":
 						img = imgAb[Math.floor(Math.random() * imgAb.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "Bb":
 						img = imgBb[Math.floor(Math.random() * imgBb.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "Cb":
 						img = imgCb[Math.floor(Math.random() * imgCb.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "Db":
 						img = imgDb[Math.floor(Math.random() * imgDb.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "Eb":
 						img = imgEb[Math.floor(Math.random() * imgEb.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "Fb":
 						img = imgFb[Math.floor(Math.random() * imgFb.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "Gb":
 						img = imgGb[Math.floor(Math.random() * imgGb.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "A#":
 						img = imgAs[Math.floor(Math.random() * imgAs.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "B#":
 						img = imgBs[Math.floor(Math.random() * imgBs.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "C#":
 						img = imgCs[Math.floor(Math.random() * imgCs.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "D#":
 						img = imgDs[Math.floor(Math.random() * imgDs.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "E#":
 						img = imgEs[Math.floor(Math.random() * imgEs.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "F#":
 						img = imgFs[Math.floor(Math.random() * imgFs.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					case "G#":
 						img = imgGs[Math.floor(Math.random() * imgGs.length)];
-						document.getElementById("test2").innerHTML = img;
 						document.getElementById('myImage').src = "https://www.melodicodyssey.com/assets/images/resources/notationtrainer/"+img;
 						break;
 					default:
