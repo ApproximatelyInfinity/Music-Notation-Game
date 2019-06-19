@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<?php include 'includes/header.php'; ?>
+		<?php include 'header.php'; ?>
 		<meta name="description" content="Begin your melodic odyssey with a host of FREE beginner lessons. Here you will find lessons on a variety of instruments. Whether you're looking to advance your skills or just beginning your journey, Melodic Odyssey has something for everyone." />
 	</head>
 	<body>
 		<?php 
 			if (!isset($_SESSION['username'])) {
-				include 'includes/navbar_login.php';
+				include 'navbar_login.php';
 			}else{
-				include 'includes/navbar_logout.php';
+				include 'navbar_logout.php';
 			}
 		?>
 		<div class="content">
@@ -19,23 +19,75 @@
 					<div class="padding" style="padding-top:70px"></div>
 					<h1 align="center">Notation Training</h1> 
 					<hr/>
-					<br/>
-					<div class="row no-gutter" align="center">
+					<div class="notation-image-container row no-gutter" align="center">
 						<div class="col-sm-12">
-							<img id="myImage" src=""/>
-						</div>
-					</div>
-					<div class="row no-gutter">
-						<div class="col-sm-6">
-							<br/>
-							<p id="right"></p>
-						</div>
-						<div class="col-sm-6">
-							<br/>
-							<p id="wrong"></p>
+							<img id="myImage" class="notation-image" src=""/>
 						</div>
 					</div>
 					<hr/>
+					<div class="row no-gutter">
+						<div class="col-sm"></div>
+						<div class="col-sm">
+							<p id="right" align="right" style="color: green; font-size: 24px;"><b>0</b></p>
+						</div>
+						<div class="col-sm">
+							<input style="height: 24px; width: 24px; margin-left: 45%;" type="image" onclick="playAudio()" align="center" src="https://www.melodicodyssey.com/assets/images/icons/play-button.png"/>
+							<audio id="audio">
+								<source src="" type="audio/mp3">
+							</audio>
+						</div>
+						<div class="col-sm">
+							<p id="wrong" style="color: red; font-size: 24px; float:left;"><b>0</b></p>
+							<input id="settings" type="image" align="left" src="https://www.melodicodyssey.com/assets/images/icons/settings.png" style="float:right;"/>
+						</div>
+						<div class="col-sm"></div>
+					</div>
+					<div id="settings-menu" class="row no-gutter">
+						<div class="row no-gutter">
+							<div class="col-sm">
+								<p style="font-size: 20px; margin-bottom: -5%;">Notes</p><hr/>
+								<div class="row no-gutter">
+									<div class="col-sm">
+										<p class="settings-menu-text">Sharps</p>
+										<button id="btn1" class="btn-xs settings-menu-btn">Disable</button>
+									</div>
+								</div>
+								<div class="row no-gutter">
+									<div class="col-sm">
+										<p class="settings-menu-text">Flats</p>
+										<button id="btn2" class="btn-xs settings-menu-btn">Disable</button>
+									</div>
+								</div>
+								<div class="row no-gutter">
+									<div class="col-sm">
+										<p class="settings-menu-text">Enharmonics</p>
+										<button id="btn3" class="btn-xs settings-menu-btn">Disable</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm">
+								<p style="font-size: 20px; margin-bottom: -5%;">Staves</p><hr/>
+								<div class="row no-gutter">
+									<div class="col-sm">
+										<p class="settings-menu-text">Grand</p>
+										<button id="grand" class="btn-xs settings-menu-btn">Disable</button>
+									</div>
+								</div>
+								<div class="row no-gutter">
+									<div class="col-sm">
+										<p class="settings-menu-text">Treble</p>
+										<button id="btn4" class="btn-xs settings-menu-btn">Disable</button>
+									</div>
+								</div>
+								<div class="row no-gutter">
+									<div class="col-sm">
+										<p class="settings-menu-text">Bass</p>
+										<button id="btn5" class="btn-xs settings-menu-btn">Disable</button>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
 					<div class="row no-gutter" align="center">
 						<div id="sharp" class="col-sm-12">
 							<input class="btn btn-purple" type="button" value="C#" onclick="randomNote(this.value)"/>
@@ -65,27 +117,11 @@
 							<input class="btn btn-purple" type="button" value="Bb" onclick="randomNote(this.value)"/>
 						</div>
 					</div>
-					<button id="btn1">Toggle Sharps</button>
-					<button id="btn2">Toggle Flats</button>
-					<button id="btn3">Toggle Enharmonics</button>
 					<hr/>
-					<div class="col-sm-6">
-						<p id="test"></p>
-					</div>
-					<div class="col-sm-6">
-						<p id="test2"></p>
-					</div>
-					<div class="col-sm-6">
-						<p id="test3" style="color:green;">0</p>
-					</div>
-					<div class="col-sm-6">
-						<p id="test4" style="color:red;">0</p>
-					</div>
-					<br/>
 				</div>
 				<div style="padding-top: 64px"></div>
 			</div>
 		</div>
-		<?php include "includes/footer.php"; ?>
+		<?php include "footer.php"; ?>
 	</body>
 </html>
