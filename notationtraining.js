@@ -1,4 +1,4 @@
-      var toggle_sharp = false; 
+		var toggle_sharp = false; 
 			var toggle_flat = false;
 			var toggle_enharmonic = false;
 			var flag_sharp = false;
