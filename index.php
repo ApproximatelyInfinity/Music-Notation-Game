@@ -7,13 +7,16 @@
 		<title>Notation Training</title>
 		<style>
 			.notation-image-container {
+				border: 1px solid red;
 				height: 350px;
 			}
 			.notation-image {
+				border: 1px solid orange;
 				margin-left: 35%;
 				height: 350px;
 			}
 			.notation-menu-bar {
+				border: 1px solid yellow;
 				list-style-type: none;
 				margin: 0;
 			}
@@ -86,12 +89,12 @@
 					<audio id="myAudio">
 						<source src="" type="audio/ogg">
 					</audio>
-					<input class="audio-btn" onclick="playAudio()" type="image" src="https://www.melodicodyssey.com/assets/images/icons/play-button.png"></input>
+					<input class="audio-btn" onclick="playAudio()" type="image" src="assets/images/icons/play-button.png"></input>
 				</li>
 				<li class="notation-menu-bar-wrong" style="display:inline-block;">
 					<p id="wrong" class="wrong"><b>0</b></p>
 				</li>
-				<li class="notation-menu-bar-settings" style="display:inline-block;"><input id="settings" class="settings-btn" type="image" src="https://www.melodicodyssey.com/assets/images/icons/settings.png"/></li>
+				<li class="notation-menu-bar-settings" style="display:inline-block;"><input id="settings" class="settings-btn" type="image" src="assets/images/icons/settings.png"/></li>
 			</ul>
 			<div id="settings-menu">
 					<p style="font-size: 20px;">Notes</p><hr/><br>
