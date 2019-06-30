@@ -1,5 +1,4 @@
-      //variables to determine what is shown
-			var toggle_sharp = false; 
+      var toggle_sharp = false; 
 			var toggle_flat = false;
 			var toggle_enharmonic = false;
 			var flag_sharp = false;
@@ -11,6 +10,7 @@
 			var flag_audio = false;
 			var flag_settings = true;
 			
+			
 			var right = 0;
 			var wrong = 0;
 			var note;
@@ -18,6 +18,8 @@
 			var img;
 			var audio;
 			var imgCf, imgC, imgCs, imgDf, imgD, imgDs, imgEf, imgE, imgEs, imgFf, imgF, imgFs, imgGf, imgG, imgGs, imgAf, imgA, imgAs, imgBs, imgB, imgBf;
+			
+			var x = document.getElementById("myAudio");
 			
 			img = "blank.png";
 			
@@ -87,6 +89,11 @@
 			b_imgG = ["g2.png", "g3.png"];
 			b_imgGs = ["gs2.png", "gs3.png"];
 			
+			//function to play audio
+			function playAudio() { 
+				x.play(); 
+			}
+			
 			//function for the settings menu
 			document.querySelector('#settings').addEventListener('click', function() {
 				if(flag_settings == true) {
@@ -108,14 +115,12 @@
 			imgChange(ans);
 			
 			//change the audio when the page is loaded
-			document.getElementById("audio").src="";
+			audioChange(ans);
 			
 			//toggle sharps button
 			document.querySelector('#btn1').addEventListener('click',function() {
 				if(flag_enharmonic == true) {
-					console.log("Enharmonics: "+flag_enharmonic);
 					if(flag_sharp == false) {
-						console.log("Sharps: "+flag_sharp);
 						document.getElementById("sharp").style.display = "none";
 						document.getElementById("btn1").innerHTML = "Enable";
 						flag_sharp = true;
@@ -124,13 +129,14 @@
 							note = ["C", "D", "E", "F", "G", "A", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}else{
 							note = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}
 					}else{
-						console.log("Sharps: "+flag_sharp);
 						document.getElementById("sharp").style.display = "block";
 						document.getElementById("btn1").innerHTML = "Disable";
 						flag_sharp = false;
@@ -138,11 +144,10 @@
 						note = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
 						ans = note[Math.floor(Math.random() * note.length)];
 						imgChange(ans);
+						audioChange(ans);
 					}
 				}else{
-					console.log("Enharmonics: "+flag_enharmonic);
 					if(flag_sharp == false) {
-						console.log("Sharps: "+flag_sharp);
 						document.getElementById("sharp").style.display = "none";
 						document.getElementById("btn1").innerHTML = "Enable";
 						flag_sharp = true;
@@ -151,13 +156,14 @@
 							note = ["C", "D", "E", "F", "G", "A", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}else{
 							note = ["Cb", "C", "Db", "D", "Eb", "E", "Fb", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}
 					}else{
-						console.log("Sharps: "+flag_sharp);
 						document.getElementById("sharp").style.display = "block";
 						document.getElementById("btn1").innerHTML = "Disable";
 						flag_sharp = false;
@@ -165,6 +171,7 @@
 						note = ["Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "Fb", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
 						ans = note[Math.floor(Math.random() * note.length)];
 						imgChange(ans);
+						audioChange(ans);
 					}
 				}
 			});
@@ -173,9 +180,7 @@
 			document.querySelector('#btn2').addEventListener('click',function() {
 				if(flag_enharmonic == true) {
 					//enharmonics are turned on
-					console.log("Enharmonics: "+flag_enharmonic);
 					if(flag_flat == false) {
-						console.log("Flats: "+flag_flat);
 						document.getElementById("flat").style.display = "none";
 						document.getElementById("btn2").innerHTML = "Enable";
 						flag_flat = true;
@@ -184,13 +189,14 @@
 							note = ["C", "D", "E", "F", "G", "A", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}else{
 							note = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}
 					}else{
-						console.log("Flats: "+flag_flat);
 						document.getElementById("flat").style.display = "block";
 						document.getElementById("btn2").innerHTML = "Disable";
 						flag_flat = false;
@@ -198,12 +204,11 @@
 						note = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
 						ans = note[Math.floor(Math.random() * note.length)];
 						imgChange(ans);
+						audioChange(ans);
 					}
 				}else{
 					//enharmonics are turned off
-					console.log("Enharmonics: "+flag_enharmonic);
 					if(flag_flat == false) {
-						console.log("Flats: "+flag_flat);
 						document.getElementById("flat").style.display = "none";
 						document.getElementById("btn2").innerHTML = "Enable";
 						flag_flat = true;
@@ -212,13 +217,14 @@
 							note = ["C", "D", "E", "F", "G", "A", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}else{
 							note = ["C", "C#", "D", "D#", "E", "E#", "F", "F#", "G", "G#", "A", "A#", "B", "B#"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}
 					}else{
-						console.log("Flats: "+flag_flat);
 						document.getElementById("flat").style.display = "block";
 						document.getElementById("btn2").innerHTML = "Disable";
 						flag_flat = false;
@@ -226,6 +232,7 @@
 						note = ["Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B", "B#"];
 						ans = note[Math.floor(Math.random() * note.length)];
 						imgChange(ans);
+						audioChange(ans);
 					}
 				}
 			});
@@ -250,10 +257,12 @@
 						note = ["C", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
 						ans = note[Math.floor(Math.random() * note.length)];
 						imgChange(ans);
+						audioChange(ans);
 					}else{
 						note = ["Cb", "C", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Fb", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B", "B#"];
 						ans = note[Math.floor(Math.random() * note.length)];
 						imgChange(ans);
+						audioChange(ans);
 					}
 					
 					//changes the note when the enharmonic button is toggled
@@ -262,10 +271,12 @@
 							note = ["C", "D", "E", "F", "G", "A", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}else{
 							note = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}
 					}
 					
@@ -274,10 +285,12 @@
 							note = ["C", "D", "E", "F", "G", "A", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}else{
 							note = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}
 					}
 					
@@ -301,10 +314,12 @@
 							note = ["C", "D", "E", "F", "G", "A", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}else{
 							note = ["Cb", "C", "C#", "D", "D#", "E", "E#", "F", "F#", "G", "G#", "A", "A#", "B", "B#"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}
 					}
 					
@@ -313,10 +328,12 @@
 							note = ["C", "D", "E", "F", "G", "A", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}else{
 							note = ["Cb", "C", "Db", "D", "Eb", "E", "Fb", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
 							ans = note[Math.floor(Math.random() * note.length)];
 							imgChange(ans);
+							audioChange(ans);
 						}
 					}
 				}	
@@ -331,16 +348,16 @@
 					document.getElementById("grand").innerHTML = "Enable";
 					document.getElementById("btn4").innerHTML = "Disable";
 					document.getElementById("btn5").innerHTML = "Disable";
-					console.log("grand: "+flag_grand+"  treble: "+flag_treble+"  bass: "+flag_bass);
 					imgChange(ans);
+					audioChange(ans);
 					document.getElementById("myImage").style.margin = "0px 0px -320px 0px";
 				}else if(flag_grand == true) {
 					flag_grand = false;
 					document.getElementById("grand").innerHTML = "Disable";
 					document.getElementById("btn4").innerHTML = "Disable";
 					document.getElementById("btn5").innerHTML = "Disable";
-					console.log("grand: "+flag_grand+"  treble: "+flag_treble+"  bass: "+flag_bass);
 					imgChange(ans);
+					audioChange(ans);
 					document.getElementById("myImage").style.margin = "0px 0px -320px 0px";
 				}
 			});
@@ -354,16 +371,16 @@
 					document.getElementById("grand").innerHTML = "Disable";
 					document.getElementById("btn4").innerHTML = "Enable";
 					document.getElementById("btn5").innerHTML = "Disable";
-					console.log("grand: "+flag_grand+"  treble: "+flag_treble+"  bass: "+flag_bass);
 					imgChange(ans);
+					audioChange(ans);
 					document.getElementById("myImage").style.margin = "0px 0px -120px 0px";
 				}else if(flag_treble == true) {
 					flag_treble = false;
 					document.getElementById("grand").innerHTML = "Disable";
 					document.getElementById("btn4").innerHTML = "Disable";
 					document.getElementById("btn5").innerHTML = "Disable";
-					console.log("grand: "+flag_grand+"  treble: "+flag_treble+"  bass: "+flag_bass);
-					imgChange(ans);	
+					imgChange(ans);
+					audioChange(ans);
 					document.getElementById("myImage").style.margin = "0px 0px -320px 0px";
 				}
 			});
@@ -377,443 +394,269 @@
 					document.getElementById("grand").innerHTML = "Disable";
 					document.getElementById("btn4").innerHTML = "Disable";
 					document.getElementById("btn5").innerHTML = "Enable";
-					console.log("grand: "+flag_grand+"  treble: "+flag_treble+"  bass: "+flag_bass);
 					imgChange(ans);
+					audioChange(ans);
 					document.getElementById("myImage").style.margin = "0px 0px -120px 0px";
 				}else if(flag_bass == true) {
 					flag_bass = false;
 					document.getElementById("grand").innerHTML = "Disable";
 					document.getElementById("btn4").innerHTML = "Disable";
 					document.getElementById("btn5").innerHTML = "Disable";
-					console.log("grand: "+flag_grand+"  treble: "+flag_treble+"  bass: "+flag_bass);
 					imgChange(ans);
+					audioChange(ans);
 					document.getElementById("myImage").style.margin = "0px 0px -320px 0px";
 				}
 			});
 
-			//passes the answer to this function to get the audio for the play button
-			function playAudio() {
+			//function to change the source of the audio
+			function audioChange() {
 				switch(ans) {
 					case "A":
 						if(img == "a2.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/a2.mp3";
-								document.getElementById("audio").play();
-							}else if(img == "a3.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/a3.mp3";
-								document.getElementById("audio").play();
-							}else if(img == "a4.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/a4.mp3";
-								document.getElementById("audio").play();
-							}else if(img == "a5.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/a5.mp3";
-								document.getElementById("audio").play();
-							}
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/a2.ogg";
+						}else if(img == "a3.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/a3.ogg";
+						}else if(img == "a4.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/a4.ogg";
+						}else if(img == "a5.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/a5.ogg";
+						}
 						break;
 					case "B":
 						if(img == "b2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/b2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/b2.ogg";
 						}else if(img == "b3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/b3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/b3.ogg";
 						}else if(img == "b4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/b4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/b4.ogg";
 						}else if(img == "b5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/b5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/b5.ogg";
 						}
 						break;
 					case "C":
 						if(img == "c2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/c2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/c2.ogg";
 						}else if(img == "c3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/c3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/c3.ogg";
 						}else if(img == "c4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/c4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/c4.ogg";
 						}else if(img == "c5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/c5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/c5.ogg";
 						}else if(img == "c6.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/c6.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/c6.ogg";
 						}
 						break;
 					case "D":
 						if(img == "d2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/d2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/d2.ogg";
 						}else if(img == "d3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/d3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/d3.ogg";
 						}else if(img == "d4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/d4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/d4.ogg";
 						}else if(img == "d5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/d5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/d5.ogg";
 						}
 						break;
 					case "E":
 						if(img == "e2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/e2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/e2.ogg";
 						}else if(img == "e3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/e3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/e3.ogg";
 						}else if(img == "e4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/e4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/e4.ogg";
 						}else if(img == "e5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/e5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/e5.ogg";
 						}
 						break;
 					case "F":
 						if(img == "f2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/f2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/f2.ogg";
 						}else if(img == "f3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/f3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/f3.ogg";
 						}else if(img == "f4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/f4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/f4.ogg";
 						}else if(img == "f5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/f5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/f5.ogg";
 						}
 						break;
 					case "G":
 						if(img == "g2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/g2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/g2.ogg";
 						}else if(img == "g3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/g3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/g3.ogg";
 						}else if(img == "g4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/g4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/g4.ogg";
 						}else if(img == "g5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/g5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/g5.ogg";
 						}
 						break;
 					case "Ab":
 						if(img == "af2.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/af2.mp3";
-								document.getElementById("audio").play();
-							}else if(img == "af3.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/af3.mp3";
-								document.getElementById("audio").play();
-							}else if(img == "af4.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/af4.mp3";
-								document.getElementById("audio").play();
-							}else if(img == "af5.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/af5.mp3";
-								document.getElementById("audio").play();
-							}
+							document.getElementById("myAudio").src = "https://www.melodicodyssey.com/assets/audio/notes/single/gs2.ogg";
+						}else if(img == "af3.png") {
+							document.getElementById("myAudio").src = "https://www.melodicodyssey.com/assets/audio/notes/single/gs3.ogg";
+						}else if(img == "af4.png") {
+							document.getElementById("myAudio").src = "https://www.melodicodyssey.com/assets/audio/notes/single/gs4.ogg";
+						}else if(img == "af5.png") {
+							document.getElementById("myAudio").src = "https://www.melodicodyssey.com/assets/audio/notes/single/gs5.ogg";
+						}
 						break;
 					case "Bb":
 						if(img == "bf2.png") {
-							console.log("working "+img+" "+ans);;
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/bf2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/as2.ogg";
 						}else if(img == "bf3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/bf3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/as3.ogg";
 						}else if(img == "bf4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/bf4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/as4.ogg";
 						}else if(img == "bf5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/bf5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/as5.ogg";
 						}
 						break;
 					case "Cb":
-						if(img == "cb2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cf2.mp3";
-							document.getElementById("audio").play();
-						}else if(img == "cb3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cf3.mp3";
-							document.getElementById("audio").play();
-						}else if(img == "cb4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cf4.mp3";
-							document.getElementById("audio").play();
-						}else if(img == "cb5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cf5.mp3";
-							document.getElementById("audio").play();
-						}else if(img == "cb6.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cf6.mp3";
-							document.getElementById("audio").play();
+						if(img == "cf2.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/b1.ogg";
+						}else if(img == "cf3.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/b2.ogg";
+						}else if(img == "cf4.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/b3.ogg";
+						}else if(img == "cf5.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/b4.ogg";
+						}else if(img == "cf6.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/b5.ogg";
 						}
 						break;
 					case "Db":
 						if(img == "df2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/df2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/cs2.ogg";
 						}else if(img == "df3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/df3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/cs3.ogg";
 						}else if(img == "df4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/df4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/cs4.ogg";
 						}else if(img == "df5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/df5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/cs5.ogg";
 						}
 						break;
 					case "Eb":
 						if(img == "ef2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/df2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/ds2.ogg";
 						}else if(img == "ef3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ef3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/ds3.ogg";
 						}else if(img == "ef4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ef4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/ds4.ogg";
 						}else if(img == "ef5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ef5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/ds5.ogg";
 						}
 						break;
 					case "Fb":
 						if(img == "ff2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ff2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/e2.ogg";
 						}else if(img == "ff3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ff3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/e3.ogg";
 						}else if(img == "ff4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ff4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/e4.ogg";
 						}else if(img == "ff5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ff5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/e5.ogg";
 						}
 						break;
 					case "Gb":
 						if(img == "gf2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/gf2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/fs2.ogg";
 						}else if(img == "gf3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/gf3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/fs3.ogg";
 						}else if(img == "gf4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/gf4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/fs4.ogg";
 						}else if(img == "gf5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/gf5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/fs5.ogg";
 						}
 						break;
 					case "A#":
 						if(img == "as2.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/as2.mp3";
-								document.getElementById("audio").play();
-							}else if(img == "as3.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/as3.mp3";
-								document.getElementById("audio").play();
-							}else if(img == "as4.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/as4.mp3";
-								document.getElementById("audio").play();
-							}else if(img == "as5.png") {
-								console.log("working "+img+" "+ans);
-								document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/as5.mp3";
-								document.getElementById("audio").play();
-							}
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/as2.ogg";
+						}else if(img == "as3.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/as3.ogg";
+						}else if(img == "as4.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/as4.ogg";
+						}else if(img == "as5.png") {
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/as5.ogg";
+						}
 						break;
 					case "B#":
 						if(img == "bs2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/bs2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/c2.ogg";
 						}else if(img == "bs3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/bs3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/c3.ogg";
 						}else if(img == "bs4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/bs4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/c4.ogg";
 						}else if(img == "bs5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/bs5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/c5.ogg";
 						}
 						break;
 					case "C#":
 						if(img == "cs2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cs2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/cs2.ogg";
 						}else if(img == "cs3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cs3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/cs3.ogg";
 						}else if(img == "cs4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cs4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/cs4.ogg";
 						}else if(img == "cs5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cs5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/cs5.ogg";
 						}else if(img == "cs6.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/cs6.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/cs6.ogg";
 						}
 						break;
 					case "D#":
 						if(img == "ds2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ds2.pm3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/ds2.ogg";
 						}else if(img == "ds3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ds3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/ds3.ogg";
 						}else if(img == "ds4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ds4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/ds4.ogg";
 						}else if(img == "ds5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/ds5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/ds5.ogg";
 						}
 						break;
 					case "E#":
 						if(img == "es2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/es2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/f2.ogg";
 						}else if(img == "es3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/es3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/f3.ogg";
 						}else if(img == "es4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/es4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/f4.ogg";
 						}else if(img == "es5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/es5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/f5.ogg";
 						}
 						break;
 					case "F#":
 						if(img == "fs2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/fs2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/fs2.ogg";
 						}else if(img == "fs3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/fs3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/fs3.ogg";
 						}else if(img == "fs4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/fs4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/fs4.ogg";
 						}else if(img == "fs5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/fs5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/fs5.ogg";
 						}
 						break;
 					case "G#":
 						if(img == "gs2.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/gs2.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/gs2.ogg";
 						}else if(img == "gs3.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/gs3.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/gs3.ogg";
 						}else if(img == "gs4.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/gs4.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/gs4.ogg";
 						}else if(img == "gs5.png") {
-							console.log("working "+img+" "+ans);
-							document.getElementById("audio").src="https://www.melodicodyssey.com/assets/audio/resources/notationtrainer/gs5.mp3";
-							document.getElementById("audio").play();
+							document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/gs5.ogg";
 						}
 						break;
 					default:
 						console.log("error");
+						document.getElementById('myAudio').src = "https://www.melodicodyssey.com/assets/audio/notes/single/a2.ogg";
 						break;
 				}
 			}
 			
 			//passes the answer to this function to change the image
 			function imgChange(ans) {
-				console.log(ans);
 				if(flag_grand == true) {
 					switch(ans) {
 						case "A":
@@ -1184,126 +1027,147 @@
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "B":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "C":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "D":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "E":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "F":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "G":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "Ab":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "Bb":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "Cb":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "Db":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "Eb":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "Fb":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "Gb":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "A#":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "B#":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "C#":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "D#":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "E#":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "F#":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						case "G#":
 							ans = note[Math.floor(Math.random() * note.length)];
 							right++;
 							imgChange(ans);
+							audioChange(ans);
 							document.getElementById("right").innerHTML = right;
 							break;
 						default:
